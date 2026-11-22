@@ -1,0 +1,59 @@
+name: Build ApexGuns
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: build-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    name: Java 21 / Paper 1.21.11
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Java 21
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '21'
+          cache: maven
+
+      - name: Build plugin JAR
+        run: mvn --batch-mode --no-transfer-progress clean verify
+
+      - name: Verify plugin JAR
+        shell: bash
+        run: |
+          test -s target/ApexGuns-1.0.0.jar
+          jar tf target/ApexGuns-1.0.0.jar | grep '^plugin.yml$'
+          jar tf target/ApexGuns-1.0.0.jar | grep '^dev/apex/guns/ApexGuns.class$'
+
+      - name: Upload plugin JAR
+        uses: actions/upload-artifact@v4
+        with:
+          name: ApexGuns-Paper-1.21.11
+          path: target/ApexGuns-1.0.0.jar
+          if-no-files-found: error
+          retention-days: 30
+
+      - name: Build resource pack
+        run: python3 tools/build_pack.py
+
+      - name: Upload resource pack
+        uses: actions/upload-artifact@v4
+        with:
+          name: ApexGuns-ResourcePack-1.21.11
+          path: dist/ApexGuns-ResourcePack-1.21.11.zip
+          if-no-files-found: error
+          retention-days: 30
