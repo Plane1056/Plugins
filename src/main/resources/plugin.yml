@@ -1,0 +1,14 @@
+name: ApexGuns
+version: 1.0.0
+main: dev.apex.guns.ApexGuns
+api-version: '1.21.11'
+description: Four custom guns with Q reload and inventory-only manual dropping.
+commands:
+  guns:
+    description: Gun administration and help
+    usage: /guns help
+permissions:
+  apexguns.admin:
+    default: op
+  apexguns.use:
+    default: true

@@ -1,0 +1,51 @@
+pvp: true
+headshot-multiplier: 1.75
+keep-guns-on-death: true
+infinite-reserve: false
+tracers: true
+aim-walk-multiplier: 0.55
+weapons:
+  viper:
+    name: Viper-9
+    magazine: 15
+    damage: 5.0
+    range: 65.0
+    cooldown-ticks: 5
+    reload-ticks: 28
+    pellets: 1
+    spread: 0.016
+    aim-spread: 0.003
+    recoil: 0.6
+  phantom:
+    name: Phantom AR
+    magazine: 30
+    damage: 6.0
+    range: 95.0
+    cooldown-ticks: 3
+    reload-ticks: 44
+    pellets: 1
+    spread: 0.025
+    aim-spread: 0.004
+    recoil: 0.8
+  breach:
+    name: Breach-12
+    magazine: 6
+    damage: 2.5
+    range: 32.0
+    cooldown-ticks: 20
+    reload-ticks: 56
+    pellets: 8
+    spread: 0.085
+    aim-spread: 0.05
+    recoil: 2.0
+  spectre:
+    name: Spectre .50
+    magazine: 5
+    damage: 15.0
+    range: 160.0
+    cooldown-ticks: 30
+    reload-ticks: 64
+    pellets: 1
+    spread: 0.045
+    aim-spread: 0.0008
+    recoil: 3.0

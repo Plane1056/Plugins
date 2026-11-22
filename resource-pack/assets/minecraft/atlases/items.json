@@ -1,0 +1,34 @@
+{
+  "sources": [
+    {
+      "type": "minecraft:single",
+      "resource": "apexguns:item/steel",
+      "sprite": "apexguns:item/steel"
+    },
+    {
+      "type": "minecraft:single",
+      "resource": "apexguns:item/edge",
+      "sprite": "apexguns:item/edge"
+    },
+    {
+      "type": "minecraft:single",
+      "resource": "apexguns:item/black",
+      "sprite": "apexguns:item/black"
+    },
+    {
+      "type": "minecraft:single",
+      "resource": "apexguns:item/cyan",
+      "sprite": "apexguns:item/cyan"
+    },
+    {
+      "type": "minecraft:single",
+      "resource": "apexguns:item/gold",
+      "sprite": "apexguns:item/gold"
+    },
+    {
+      "type": "minecraft:single",
+      "resource": "apexguns:item/tan",
+      "sprite": "apexguns:item/tan"
+    }
+  ]
+}
